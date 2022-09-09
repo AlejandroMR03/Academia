@@ -51,20 +51,18 @@ class StudentController extends Controller
         if($request->hasFile('identify_document')){
             $trainee->identify_document = $request->file('identify_document')->store('public/students/identify_document');
         }
-        $trainee->document_issuing_country = $request->input('document_issuing_country');
-        $trainee->issuing_department = $request->input('issuing_department');
+       
         $trainee->issuing_municipality = $request->input('issuing_municipality');
         $trainee->name = $request->input('name');
         $trainee->first_last_name = $request->input('first_last_name');
         $trainee->second_last_name = $request->input('second_last_name');
         $trainee->gender = $request->input('gender');
         $trainee->birth_date = $request->input('birth_date');
-        $trainee->birth_country = $request->input('birth_country');
-        $trainee->birth_department = $request->input('birth_department');
         $trainee->birth_municipality = $request->input('birth_municipality');
         $trainee->stratum = $request->input('stratum');
         $trainee->save();
         return view('students.add_student');
+        return $request;
     }
 
     /**

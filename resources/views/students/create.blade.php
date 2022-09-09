@@ -41,38 +41,56 @@
                             </div>
                             <div>
                                 <label for="identify_document">Cargue Documen. Identificacion *</label>
-                                <input id="identity_document" class="" type="file"  name="identity_document" accept="application/pdf">
+                                <input id="identity_document" class="identity_document" type="file"  name="identity_document" accept="application/pdf">
                                 </div>
                             <br>
                             <div class="form-group">
                                 <div >
-                                    <label for="document_issunig_country" >País de expedicón *</label>
+                                    <label for="document_issunig_country" >País de expedición *</label>
                                     <select class="form-select form-control" id="document_issunig_country" name="document_issunig_country" aria-label="Floating label select example">
 
-                                       <option selected>Seleccione</option>
-                                      @foreach ( $countries as $land)
-                                                <option value="">{{$land->name}}</option>
-                                            @endforeach
+                                        <option selected>Seleccione</option>
+                                        <option value="colombia">Colombia</option>
+                                        <option value="brasil">Brasil</option>
+                                        <option value="argentina">Argentina</option>
+                                        <option value="Ecuador">Ecuador</option>
+                                        <option value="venezuela">Venezuela</option>
+                                       @foreach ( $countries as $land)
+                                                 <option value="">{{$land->name}}</option>
+                                             @endforeach
                                     </select>
                                   </div>
                             </div>
                             <div class="form-group">
-                                <label for="issuing_department"><b>Departamento donde fue expedido*</b></label>
-                                <div >
-                                    <select class="form-select form-control" id="issuing_department"  name="issuing_department" aria-label="Floating label select example">
-                                      <option selected>Seleccione</option>
-                                      <option value="1">Cédula de Ciudadanía</option>
-                                      <option value="2">Tarjeta de Identidad</option>
-                                    </select>
-                                  </div>
+                                <label for="issuing_department"><b>Departamento de Expedicion*</b></label>
+                                <select class="form-select form-control" id="issuing_department"  name="issuing_department" aria-label="Floating label select example">
+                                    <option selected>Seleccione</option>
+                                
+                                    <option value="antioquia">Antioquia</option>
+                                <option value="Risaralda">Risaralda</option>
+                                <option value="cundinamarca">Cundinamarca</option>
+                            <option value="Carabobo">Risaralda</option>
+                                <option value="Aragua">Cundinamarca</option>
+                                    
+
+                               @foreach ( $countries as $land)
+                                         <option value="">{{$land->name}}</option>
+                                     @endforeach
+
+                                </select>
+                    
+        
                             </div>
                             <div class="form-group">
                                 <label for="issuing_municipality">Municipio donde fue expedido*</label>
                                 <div >
                                     <select class="form-select form-control" id="issuing_municipality" name="issuing_municipality" aria-label="Floating label select example">
                                       <option selected>Seleccione</option>
-                                      <option value="Risaralda">Risaralda</option>
-                                      <option value="Cauca">Cauca</option>
+                                      <option value="pereira">Pereira</option>
+                                      <option value="dosquebradas">Dosquebradas</option>
+                                      <option value="medellin">Medellin</option>
+                                      <option value="funza">Funza</option>
+                                      <option value="puertoberrio">Puerto Berrio</option>
                                     </select>
                                   </div>
                             </div>
@@ -110,9 +128,9 @@
                             <div >
                                 <label for="gender">Género *</label>
                                 <select class="form-select form-control" id="gender" name="gender" aria-label="Floating label select example">
-                                  <option value="M">M</option>
-                                  <option value="F">F</option>
-                                  <option value="OTROS">OTROS</option>
+                                  <option value="Masculino">Masculino</option>
+                                  <option value="Femenino">Femenino</option>
+                                
                                 </select>
                               </div>
                         </div>
